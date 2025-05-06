@@ -26,7 +26,8 @@ body {
     width: 99vw;
     height: 90vh;
     z-index: 0;
-  }
+}
+
 /* Ensure the content stays above the background */
 .heroContent {
     z-index: 2;
@@ -103,27 +104,78 @@ body {
     line-height: 1.6;
 }
 
-
-
 /* Testimonials Section */
 .testimonialsSection {
-    background-color: #f1ceff; /* Light purple background */
+    background: linear-gradient(to bottom right, #fdf2ff, #f1ceff);  /* Light purple gradient */
     padding: 60px 5%;
     text-align: center;
-}
-
-.testimonialsSection h2 {
+  }
+  
+  .testimonialsSection h2 {
     font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #6b038f;
+    font-weight: 700;
+  }
+  
+  .scrollWrapper {
+    overflow-x: auto;  /* Enable horizontal scrolling */
+    display: flex;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .scrollWrapper::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar for better UI */
+  }
+  
+  .testiContainer {
+    display: flex;
+    gap: 20px; /* Space between cards */
+  }
+  
+  .testimonialCard {
+    width: 300px;  /* Set a fixed width for each card */
+    flex: 0 0 auto;  /* Prevent cards from shrinking or growing */
+    background-color: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .testimonialCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+  }
+  
+  .quote {
+    font-size: 1.05rem;
+    color: #444;
     margin-bottom: 20px;
-    color: #9717b4; /* Darker purple */
-}
+    line-height: 1.6;
+  }
+  
+  .studentName {
+    font-weight: 600;
+    color: #6b038f;
+    font-size: 1rem;
+  }
+  
+  .collegeYear {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  
+  
+  
+  
 
-.testimonialItem {
-    width: 30%;
-    margin: 30px 1%;
-    display: inline-block;
-    vertical-align: top;
-}
+  
+  
+  
 
 .testimonialItem p {
     font-style: italic;
@@ -230,6 +282,4 @@ body {
     .howItWorks h3 {
         font-size: 1.8rem;
     }
-
-   
 }
