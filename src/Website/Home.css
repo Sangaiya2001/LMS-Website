@@ -1,0 +1,235 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fcf4ff; /* Light background */
+    color: #333;
+}
+
+/* Hero Section */
+.heroSection {
+    display: flex;
+    height: 90vh;  /* Full viewport height */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;  /* Position relative to contain the Vantabackground component */
+    color: white;
+    padding: 0 5%;
+}
+
+.vantaBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99vw;
+    height: 90vh;
+    z-index: 0;
+  }
+/* Ensure the content stays above the background */
+.heroContent {
+    z-index: 2;
+    position: relative;
+}
+
+/* Hero Content Styles */
+.heroContent h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.heroContent p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.heroButton {
+    background-color: #fcf4ff;
+    color: #b320d9;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.heroButton:hover {
+    background-color: #f8e7ff;
+    color: #6a1778;
+}
+
+/* Services Section */
+.animatedServicesSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    background: linear-gradient(to right, #fcf4ff, #f8e7ff);
+    padding: 80px 5%;
+}
+
+.animatedServiceCard {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(179, 32, 217, 0.15);
+    transition: transform 0.3s ease;
+    cursor: default;
+    overflow: hidden; /* Ensure the image doesn't overflow */
+}
+
+.animatedServiceCard img {
+    width: 17vw;  /* Make the image occupy full width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px;
+    border-radius: 10px;  /* Optionally, add rounded corners */
+}
+
+.animatedServiceCard h3 {
+    font-size: 1.6rem;
+    color: #6a1778;
+    margin-bottom: 15px;
+}
+
+.animatedServiceCard p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+
+/* Testimonials Section */
+.testimonialsSection {
+    background-color: #f1ceff; /* Light purple background */
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.testimonialsSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #9717b4; /* Darker purple */
+}
+
+.testimonialItem {
+    width: 30%;
+    margin: 30px 1%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.testimonialItem p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonialItem h3 {
+    font-weight: bold;
+    color: #b320d9; /* Main brand color */
+}
+
+/* How It Works Section */
+.howItWorks {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px 5%;
+    background-color: #f8e7ff; /* Lighter purple background */
+}
+
+.howItWorks div {
+    width: 30%;
+    text-align: center;
+}
+
+.howItWorks h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #6a1778; /* Main brand color */
+}
+
+.howItWorks p {
+    font-size: 1.2rem;
+}
+
+/* Get in Touch Section */
+.getInTouch {
+    background-color: #b320d9; /* Primary purple */
+    color: white;
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.getInTouch h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.getInTouch button {
+    background-color: #fcf4ff;
+    color: #6a1778; /* Darker purple */
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.getInTouch button:hover {
+    background-color: #f8e7ff;
+    color: #9717b4;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .heroSection {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .servicesSection {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    .howItWorks {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    .testimonialItem {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroContent h1 {
+        font-size: 2.5rem;
+    }
+
+    .heroContent p {
+        font-size: 1rem;
+    }
+
+    .servicesSection .serviceItem h3 {
+        font-size: 1.5rem;
+    }
+
+    .servicesSection .serviceItem p {
+        font-size: 1rem;
+    }
+
+    .howItWorks h3 {
+        font-size: 1.8rem;
+    }
+
+   
+}

@@ -1,0 +1,56 @@
+.nav {
+    background-color: #b026d3;
+    height: 10vh;
+    min-height: 60px; /* Ensures it doesn't get too short on small screens */
+    width: 99vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* space between logo and other nav items if needed */
+    color: #f1d0fe;
+    font-weight: 550;
+    padding: 0 5vw;
+    box-sizing: border-box;
+}
+
+.navLogo {
+    height: 10vw;
+    width: 10vw;
+    max-height: 60px;
+    max-width: 60px;
+    min-height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f1d0fe;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.navItem {
+    display: flex; /* Enables Flexbox layout */
+    gap: 60px; /* Space between items */
+    font-size: 24px;
+    font-weight: 500;
+    align-items: center; /* Ensures proper vertical alignment */
+}
+
+.navItem span {
+    color: #f1d0fe;
+    text-decoration: none;
+    font-weight: 550;
+    transition: color 0.3s, border-bottom 0.3s; /* Smooth transition for color and underline */
+}
+
+/* Hover effect */
+.navItem span:hover {
+    color: #fff; /* Hover effect */
+    cursor: pointer;
+    border-bottom: 3px solid #fff; /* Add underline on hover */
+    padding-bottom: 5px; /* Add space between text and underline */
+}
+
+
+/* Underline the active item */
+.navItem span.active {
+    color: #fff; /* Color of active item */
+    border-bottom: 3px solid #fff; /* Underline for active item */
+}
