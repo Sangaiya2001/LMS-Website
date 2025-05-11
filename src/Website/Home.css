@@ -73,8 +73,21 @@ body {
     padding: 80px 5%;
 }
 
+.serviceHead {
+    text-align: center;
+    background: linear-gradient(90deg, #fff0f6, #fce4ff);
+    font-weight: bold;
+    font-size: 60px;
+    margin-top: 10px;
+    color: #bc17de;
+    padding: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(188, 23, 222, 0.2);
+}
+
+
 .animatedServiceCard {
-    background-color: white;
+    background-color: #cd40f5;
     border-radius: 20px;
     padding: 20px;
     width: 300px;
@@ -93,14 +106,16 @@ body {
 }
 
 .animatedServiceCard h3 {
-    font-size: 1.6rem;
-    color: #6a1778;
+    font-size: 1.7rem;
+    color: #fdfdfd;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 
 .animatedServiceCard p {
     font-size: 1.1rem;
-    color: #555;
+    color: #eddef2;
+    font-weight: 400;
     line-height: 1.6;
 }
 
@@ -150,10 +165,11 @@ body {
   }
   
   .quote {
+    font-weight: 500;
     font-size: 1.05rem;
     color: #444;
     margin-bottom: 20px;
-    line-height: 1.6;
+    line-height: 1.8;
   }
   
   .studentName {
@@ -167,15 +183,6 @@ body {
     font-size: 0.9rem;
     color: #888;
   }
-  
-  
-  
-  
-  
-
-  
-  
-  
 
 .testimonialItem p {
     font-style: italic;
@@ -189,24 +196,43 @@ body {
 
 /* How It Works Section */
 .howItWorks {
-    display: flex;
-    justify-content: space-around;
-    padding: 80px 5%;
-    background-color: #f8e7ff; /* Lighter purple background */
+    padding: 40px 5%;
+    background: linear-gradient(to bottom right, #fdf2ff, #f1ceff);  /* Light purple gradient */
 }
 
-.howItWorks div {
+.steps{
+    display: flex;
+    justify-content: space-around;
+}
+
+.howItWorks div div{
     width: 30%;
+    gap: 50px;
     text-align: center;
+}
+
+.roadMapToSuc{
+    font-size: 2.5rem;
+    color: #6b038f;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 700; /* Lighter purple background */
 }
 
 .howItWorks h3 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #6a1778; /* Main brand color */
+    color: #810763; /* Main brand color */
+    font-weight: 600;
+}
+.howItWorks h4 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #d14ce8; /* Main brand color */
 }
 
-.howItWorks p {
+.howItWorks div p {
     font-size: 1.2rem;
 }
 

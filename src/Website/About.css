@@ -1,0 +1,234 @@
+.about-main {
+    background: linear-gradient(to bottom right, #e8d2ee, #ebb0eb);
+    padding: 1rem 1rem;
+  }
+  
+  .about-container {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .about-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4c1d95;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight {
+    text-decoration: underline;
+    text-decoration-thickness: 2px; /* Controls the thickness of the underline */
+    text-underline-offset: 4px; /* Controls the distance between the underline and the text */
+  }
+  
+  
+  .about-subtitle {
+    font-size: 1.8rem;
+    color: #1a2739; 
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  
+  .about-section {
+    margin-bottom: 4rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #6b21a8;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-card,
+  .why-choose-us-card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #9333ea;
+    margin-bottom: 1rem;
+  }
+  
+  .section-text,
+  .highlight-text {
+    color: #634b5e;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .bullet-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    color: #634b5e;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #634b5e;
+    font-size: 1.3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .bullet-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .bullet-item {
+    display: flex;
+    align-items: start;
+    color: #4b5563;
+  }
+  
+  .what-we-do-grid {
+    display: grid;
+    color: #634b5e;
+    font-size: 1.3rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .what-we-do-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .what-we-do-item {
+    display: flex;
+    align-items: start;
+  }
+  
+  .item-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  
+  .item-title {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .item-desc {
+    color: #6b7280;
+  }
+  
+  .vision-card {
+    background: linear-gradient(to right, #f540f1, #d920d2);
+    color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    padding: 2rem;
+  }
+  
+  .vision-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .vision-subtext {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #f3e8ff;
+  }
+  
+  .vision-grid {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .vision-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .vision-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .vision-tagline {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (min-width: 640px) {
+    .cta-buttons {
+      flex-direction: row;
+    }
+  }
+  
+  .btn-primary {
+    background-color: #9333ea;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #7e22ce;
+  }
+  
+  .btn-outline {
+    background-color: white;
+    color: #9333ea;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #9333ea;
+    border-radius: 0.5rem;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+  
+  .btn-outline:hover {
+    background-color: #f9f9f9;
+  }
+
+  .btn-primary {
+    background-color: #b417ab;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #d72dd8; /* slightly darker for hover effect */
+  }
+  
+  

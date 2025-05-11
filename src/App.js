@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from './Website/Home';
+import AppRoutes from './Website/AppRoutes';
 
 function App() {
   return (
     <>
-      <Home/>
+      <AppRoutes/>
     </>
   );
 }

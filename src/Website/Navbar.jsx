@@ -3,7 +3,7 @@ import './Navbar.css'
 import navLogo from '../Images/logo.png'
 import LoginButton from './LoginButton'
 import { Link } from 'react-router-dom';
-import Home from './Home.jsx'
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,10 +21,10 @@ const Navbar = () => {
       </div>
 
       <div className={`navItem ${isOpen ? 'open' : ''}`}>
-        <span><Link to={Home}>Home</Link></span>
-        <span>ABOUT</span>
-        <span>COURSES</span>
-        <span>TESTIMONIAL</span>
+        <span><Link to="/">Home</Link></span>
+        <span><Link to="/About">About</Link></span>
+        <span><Link to="/Courses">Courses</Link></span>
+        <span><Link to="/Testimonials">Testimonials</Link></span>
         <span>BUSINESS</span>
         <LoginButton />
       </div>

@@ -1,0 +1,93 @@
+.testimonialsSection {
+    background: linear-gradient(to bottom right, #fdf2ff, #f1ceff);
+    padding: 60px 5%;
+    text-align: center;
+    position: relative;
+  }
+  
+  .testimonialsSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #6b038f;
+    font-weight: 700;
+  }
+  
+  .sliderWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .testimonialsContainer {
+    display: flex;
+    gap: 60px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 25px 0;
+    width: calc(100% - 100px); /* Account for arrow buttons */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .testimonialsContainer::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }
+  
+  .testimonialCard {
+    scroll-snap-align: start;
+    flex: 0 0 300px;
+    background: rgb(250, 233, 249);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .testimonialCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+  }
+  
+  .arrowButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #6b038f;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: opacity 0.3s;
+  }
+  
+  .arrowButton.left {
+    left: 15px;
+  }
+  
+  .arrowButton.right {
+    right: 15px;
+  }
+  
+  .arrowButton:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .testimonialsContainer {
+      width: calc(100% - 60px);
+    }
+    
+    .testimonialCard {
+      flex: 0 0 280px;
+    }
+  }
