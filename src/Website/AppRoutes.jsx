@@ -5,6 +5,7 @@ import Home from './Home';
 import About from './About';
 import Courses from './Courses';
 import Testimonials from './Testimonials';
+import Business from './Business';
 
 
 const AppRoutes = () => {
@@ -14,6 +15,7 @@ const AppRoutes = () => {
       <Route path="/About" element={<About />} />
       <Route path="/Courses" element={<Courses />} />
       <Route path="/Testimonials" element={<Testimonials />} />
+      <Route path="/Business" element={<Business />} />
     </Routes>
   );
 };

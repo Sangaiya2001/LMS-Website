@@ -25,7 +25,7 @@ const Navbar = () => {
         <span><Link to="/About">About</Link></span>
         <span><Link to="/Courses">Courses</Link></span>
         <span><Link to="/Testimonials">Testimonials</Link></span>
-        <span>BUSINESS</span>
+        <span><Link to="/Business">Business</Link></span>
         <LoginButton />
       </div>
     </div>

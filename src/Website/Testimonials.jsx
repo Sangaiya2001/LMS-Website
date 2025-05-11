@@ -1,6 +1,10 @@
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Navbar from "./Navbar";
+import "./Testimonials.css";
+
+
+  
 
 const Testimonials = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -255,227 +259,143 @@ const Testimonials = () => {
 
   return (
     <>
-    <Navbar/>
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
-      {/* Header Section */}
-      <section className="container mx-auto px-4 py-16 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="text-4xl md:text-5xl font-bold text-purple-900 mb-4">
-            What Our Students Say ✨
-          </h1>
-          <div className="relative inline-block">
-            <p className="text-lg text-purple-700">
-              Real stories. Real impact. Real success.
-            </p>
-            <motion.div
-              className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-fuchsia-500"
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ delay: 0.3, duration: 1 }}
-            />
+      <Navbar/>
+      <div className="testimonials-container">
+        {/* Header Section */}
+        <section className="header-section">
+          <motion.div className="header-motion" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <h1 className="header-title">What Our Students Say ✨</h1>
+            <div className="header-subtitle-container">
+              <p className="header-subtitle">Real stories. Real impact. Real success.</p>
+              <motion.div className="header-underline" initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ delay: 0.3, duration: 1 }}/>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Social Proof Badge */}
+        <motion.div className="social-proof" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 }}>
+          <div className="social-badge">
+            <span className="social-star">⭐</span>
+            <span className="social-text">Trusted by 1000+ learners</span>
           </div>
         </motion.div>
-      </section>
 
-      {/* Social Proof Badge */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.5 }}
-        className="flex justify-center mb-12"
-      >
-        <div className="bg-white px-6 py-2 rounded-full shadow-md flex items-center gap-2">
-          <span className="text-yellow-500">⭐</span>
-          <span className="text-purple-800 font-medium">Trusted by 1000+ learners</span>
-        </div>
-      </motion.div>
-
-      {/* Filter Tabs */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="flex justify-center mb-8 gap-2 flex-wrap"
-      >
-        {["all", "beginner", "intermediate", "advanced", "interview"].map((filter) => (
-          <motion.button
-            key={filter}
-            variants={item}
-            onClick={() => {
-              setActiveFilter(filter);
-              setCurrentIndex(0);
-            }}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-              activeFilter === filter
-                ? "bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white"
-                : "bg-purple-100 text-purple-800 hover:bg-purple-200"
-            }`}
-          >
-            {filter === "all" ? "All" : 
-             filter === "interview" ? "Interview Prep" : 
-             filter.charAt(0).toUpperCase() + filter.slice(1)}
-          </motion.button>
-        ))}
-      </motion.div>
-
-      {/* Testimonials Carousel */}
-      <div className="relative container mx-auto px-4 mb-20 overflow-hidden">
-        <div className="relative h-96">
-          <AnimatePresence>
-            <motion.div
-              ref={carouselRef}
-              className="absolute inset-0 flex"
-              animate={controls}
-              initial={{ x: 0 }}
-            >
-              {filteredTestimonials.map((testimonial, index) => (
-                <motion.div
-                  key={testimonial.id}
-                  className="w-full flex-shrink-0 px-4"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <motion.div
-                    whileHover={{ y: -10 }}
-                    className="bg-white h-full rounded-xl shadow-lg overflow-hidden border border-purple-100 relative"
-                  >
-                    <div className="absolute top-6 right-6 text-5xl text-purple-100 opacity-50">
-                      ❝
-                    </div>
-                    <div className="h-2 bg-gradient-to-r from-purple-500 to-fuchsia-500"></div>
-                    <div className="p-8 flex flex-col h-full">
-                      <div className="flex items-center mb-6">
-                        <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-3xl mr-4">
-                          {testimonial.avatar}
-                        </div>
-                        <div>
-                          <h3 className="font-bold text-lg text-purple-900">
-                            {testimonial.name}
-                          </h3>
-                          <p className="text-purple-600 text-sm">
-                            {testimonial.course}
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-gray-600 mb-6 flex-grow">
-                        {testimonial.review}
-                      </p>
-                      <div className="flex justify-between items-center">
-                        <span className="bg-purple-50 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
-                          {testimonial.tagline}
-                        </span>
-                        <div className="flex">
-                          {[...Array(5)].map((_, i) => (
-                            <span
-                              key={i}
-                              className={`text-xl ${i < testimonial.rating ? "text-yellow-400" : "text-gray-300"}`}
-                            >
-                              ★
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Navigation Arrows */}
-        <button
-          onClick={() => goToTestimonial((currentIndex - 1 + filteredTestimonials.length) % filteredTestimonials.length)}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white w-10 h-10 rounded-full shadow-md flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all"
-        >
-          &larr;
-        </button>
-        <button
-          onClick={() => goToTestimonial((currentIndex + 1) % filteredTestimonials.length)}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white w-10 h-10 rounded-full shadow-md flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all"
-        >
-          &rarr;
-        </button>
-
-        {/* Indicators */}
-        <div className="flex justify-center mt-6 gap-2">
-          {filteredTestimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToTestimonial(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentIndex
-                  ? "bg-gradient-to-r from-purple-600 to-fuchsia-600 w-6"
-                  : "bg-purple-200"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold mb-4">
-              Ready to be our next success story? 🎓
-            </h2>
-            <p className="text-purple-100 max-w-2xl mx-auto mb-8">
-              Join thousands of students who transformed their careers with Tech With Trainer
-            </p>
+        {/* Filter Tabs */}
+        <motion.div className="filter-container" variants={container} initial="hidden" animate="show">
+          {["all", "beginner", "intermediate", "advanced", "interview"].map((filter) => (
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-purple-900 hover:bg-purple-50 font-medium px-8 py-3 rounded-full transition-all shadow-lg hover:shadow-xl flex items-center gap-2 mx-auto"
+              key={filter}
+              className={`filter-tab ${activeFilter === filter ? "active" : ""}`}
+              variants={item}
+              onClick={() => {
+                setActiveFilter(filter);
+                setCurrentIndex(0);
+              }}
             >
-              Get Free Career Guidance 👋
+              {filter === "all" ? "All" : 
+               filter === "interview" ? "Interview Prep" : 
+               filter.charAt(0).toUpperCase() + filter.slice(1)}
             </motion.button>
-          </motion.div>
-        </div>
-      </div>
+          ))}
+        </motion.div>
 
-      {/* Community Section */}
-      <div className="py-16 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-purple-900 mb-8"
-          >
-            Join the community <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500">#TechWithTrainer</span>
-          </motion.h2>
-          
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {["👩‍💻", "🧑‍🎓", "👨‍💼", "👩‍🔬", "🧑‍💻", "👨‍🎓"].map((emoji, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="text-4xl bg-purple-50 w-16 h-16 rounded-full flex items-center justify-center shadow-sm cursor-pointer hover:shadow-md transition-all"
-              >
-                {emoji}
+        {/* Testimonials Carousel */}
+        <div className="carousel-wrapper">
+          <div className="carousel-inner">
+            <AnimatePresence>
+              <motion.div ref={carouselRef} className="carousel-track" animate={controls} initial={{ x: 0 }}>
+                {filteredTestimonials.map((testimonial, index) => (
+                  <motion.div
+                    key={testimonial.id}
+                    className="carousel-slide"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <motion.div className="testimonial-card" whileHover={{ y: -10 }}>
+                      <div className="card-quote">❝</div>
+                      <div className="card-accent"></div>
+                      <div className="card-body">
+                        <div className="card-header">
+                          <div className="user-avatar">{testimonial.avatar}</div>
+                          <div className="user-info">
+                            <h3 className="user-name">{testimonial.name}</h3>
+                            <p className="user-course">{testimonial.course}</p>
+                          </div>
+                        </div>
+                        <p className="testimonial-text">{testimonial.review}</p>
+                        <div className="card-footer">
+                          <span className="testimonial-tagline">{testimonial.tagline}</span>
+                          <div className="rating-stars">
+                            {[...Array(5)].map((_, i) => (
+                              <span key={i} className={`star ${i < testimonial.rating ? "filled" : ""}`}>★</span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                ))}
               </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <button className="carousel-button prev" onClick={() => goToTestimonial((currentIndex - 1 + filteredTestimonials.length) % filteredTestimonials.length)}>
+            &larr;
+          </button>
+          <button className="carousel-button next" onClick={() => goToTestimonial((currentIndex + 1) % filteredTestimonials.length)}>
+            &rarr;
+          </button>
+
+          <div className="carousel-indicators">
+            {filteredTestimonials.map((_, index) => (
+              <button
+                key={index}
+                className={`indicator ${index === currentIndex ? "active" : ""}`}
+                onClick={() => goToTestimonial(index)}
+              />
             ))}
           </div>
         </div>
+
+        {/* CTA Section */}
+        <div className="cta-section">
+          <div className="cta-container">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
+              <h2 className="cta-title">Ready to be our next success story? 🎓</h2>
+              <p className="cta-subtitle">Join thousands of students who transformed their careers with Tech With Trainer</p>
+              <motion.button className="cta-button" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                Get Free Career Guidance 👋
+              </motion.button>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Community Section */}
+        <div className="community-section">
+          <div className="community-container">
+            <motion.h2 className="community-title" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
+              Join the community <span className="community-highlight">#TechWithTrainer</span>
+            </motion.h2>
+            <div className="community-avatars">
+              {["👩‍💻", "🧑‍🎓", "👨‍💼", "👩‍🔬", "🧑‍💻", "👨‍🎓"].map((emoji, index) => (
+                <motion.div
+                  key={index}
+                  className="community-avatar"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  {emoji}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     </>
   );
 };
